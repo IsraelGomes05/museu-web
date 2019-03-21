@@ -9,6 +9,7 @@ import br.edu.ifmt.java.main.dao.DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class ObraDeArteDao {
         try (PreparedStatement psm = DAO.getConexao().prepareStatement(sql)) {
 
             rs = psm.executeQuery();
-            
+
             while (rs.next()) {
                 ObraDeArte livro = new ObraDeArte(
                         rs.getLong("id"),
@@ -69,17 +70,18 @@ public class ObraDeArteDao {
 
         try (PreparedStatement psm = DAO.getConexao().prepareStatement(sql)) {
 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            Date date = sdf.parse(obraDeArte.getData());
-            
+            DateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
+            DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
+            Date data = df2.parse(obraDeArte.getData());
+                    
             psm.setString(1, obraDeArte.getTitulo());
             psm.setString(2, obraDeArte.getAutor());
-            psm.setString(3, sdf.format(date));
+            psm.setString(3, df1.format(data));
             psm.setString(4, obraDeArte.getTipo());
             psm.setString(5, obraDeArte.getProcedencia());
             psm.setString(6, obraDeArte.getTecnica());
             psm.setString(7, obraDeArte.getImagem() == null ? "assets/img/vazio.jpg" : obraDeArte.getImagem());
-            
+
             psm.executeUpdate();
         }
     }
