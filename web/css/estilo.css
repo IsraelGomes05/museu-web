@@ -1,0 +1,57 @@
+
+.text-center {
+    width: 80px;
+    height: 80%;
+    margin-top: 50px
+}
+
+.fundo-menu {
+
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.link-padrao {
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover{
+    text-decoration: none; 
+    color: white;
+    background: #0056b3;
+    border-radius: 15%;
+}
+
+a:hover {
+    text-decoration: none; 
+    color: white;
+}
+
+/* Listagem de obras de arte*/
+.card-obra-arte {
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.img-card {
+    height: 180px;
+    width: 100px;
+}
+/* Listagem de obras de arte Fim */
+
+
+/*Barra de navegação*/
+.titulo-museum {
+    color: white;
+    margin-right: 10px;
+}
+
+.barra-navegacao{
+    margin-bottom: 10px;
+}
+
+/*Barra de navegação fim*/
