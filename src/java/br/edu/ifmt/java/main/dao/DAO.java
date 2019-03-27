@@ -1,16 +1,6 @@
-/**
- * @created  00/00/2018
- * @lastModified 00/00/2018
- */
+
 package br.edu.ifmt.java.main.dao;
 
-/**
- * funcion...
- *
- * @author Israel Gomes
- * @version 1.0
- * @since 1.0
- */
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

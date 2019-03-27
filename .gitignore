@@ -1,6 +1,5 @@
 
 nbproject/private/private\.xml
 /dist/
-
-build/*
 *.class
+build/
